@@ -27,11 +27,17 @@ Es el conjunto de capas de comunicación de la arquitectura TCP/IP donde HTTP op
 Una URL (Uniform Resource Locator) es la dirección específica que se utiliza para acceder a un recurso en Internet. Sus componentes principales son:
 
 Esquema o Protocolo: Especifica el protocolo utilizado para recuperar el recurso (por ejemplo, http, https, ftp).
+
 Subdominio: Indica el subapartado del dominio principal (por ejemplo, www).
+
 Dominio o Host: El nombre de dominio único asignado al servidor web (por ejemplo, ejemplo.com).
+
 Puerto: El canal de comunicación del servidor (por ejemplo, :80 para HTTP o :443 para HTTPS). Suele estar oculto si es el predeterminado.
+
 Ruta (Path): La ubicación específica del recurso o archivo dentro del servidor (por ejemplo, /productos/index.html).
+
 Parámetros de consulta (Query): Datos adicionales enviados al servidor que empiezan con ? (por ejemplo, ?id=123&categoria=libros).
+
 Anclaje o Fragmento: Apunta a una sección interna específica de la página, identificado con # (por ejemplo, #contacto).   
 
 ¿Pasos en la recuperación de una página web mediante HTTP?
