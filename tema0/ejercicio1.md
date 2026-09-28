@@ -83,5 +83,16 @@ Los códigos de estado HTTP constan de tres dígitos y notifican si la petición
 
 5xx (Errores del Servidor): El servidor falló al intentar procesar una solicitud que parecía válida (ej. 500 Internal Server Error, 503 Service Unavailable).
 
+# Content type. Tipos principales
+
+Content-type: Tipos principales
+La cabecera Content-Type le indica al navegador qué tipo de archivo está recibiendo para que sepa cómo interpretarlo correctamente usando formatos estandarizados (MIME types):
+text/html: Documentos de páginas web HTML estándar.
+text/css: Hojas de estilo utilizadas para dar diseño al sitio web.
+application/javascript: Archivos de código JavaScript que aportan interactividad.
+application/json: Formato ligero de intercambio de datos, muy común en APIs web.
+image/jpeg o image/png: Archivos de imágenes para su visualización directa.
+multipart/form-data: Utilizado al subir archivos (como fotos o documentos) a través de un formulario web.
+
 
   
