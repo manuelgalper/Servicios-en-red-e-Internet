@@ -59,11 +59,64 @@ Ahora nos pide solicitar la instalación le digo Y y luego ENTER
 
 Cuando se haya terminado compruebo si se puede iniciar sesión en la consola de MySQL, para ello escribo el siguiente comando:
 
-sudo mysql
+sudo mysql 
+
+Y vemos que sale el siguiente resultado:
 
 <img width="528" height="215" alt="image" src="https://github.com/user-attachments/assets/21ea675b-67c6-4583-83ed-f197df943ed8" />
 
+Y ahora si quiero salir de la consola escribo lo siguiente:
 
+exit
+
+<img width="92" height="26" alt="image" src="https://github.com/user-attachments/assets/2bc942ed-4ee2-478c-bc97-598455c3dddd" />
+
+# Paso 3 Instalar PHP
+
+Lo siguiente que vamos a hacer es instalar el servidor PHP para almacenar y gestionar sus datos, para ello escribo el siguiente comando:
+
+sudo apt install php libapache2-mod-php php-mysql
+
+<img width="536" height="32" alt="image" src="https://github.com/user-attachments/assets/0188f31d-b216-4906-8381-bcd5b5bec1d3" />
+
+Ahora nos pide solicitar la instalación le digo S y luego ENTER 
+
+Y vemos que el proceso sigue ejecutando
+
+<img width="542" height="315" alt="image" src="https://github.com/user-attachments/assets/11b1bc6a-749f-4364-a758-8a4f3ad545d4" />
+
+Ahora una vez que se haya completado la instalación vamos a confirmar cuál es la versión de PHP, para ello escribo lo siguiente:
+
+php -v
+
+<img width="360" height="16" alt="image" src="https://github.com/user-attachments/assets/d1c8c8af-7de1-4689-b40d-793fbb543edb" />
+
+Y vemos que la versión es 8.14.11
+
+<img width="463" height="88" alt="image" src="https://github.com/user-attachments/assets/e4b15e7c-17da-46f2-b7b5-a65bf3fc019f" />
+
+# Paso 4: Crear un host virtual para su sitio web
+
+Ahora vamos a crear un host virtual para su sitio web, lo primero que hago es crear un directorio para your_domain y lo hago con 
+el siguiente comando:
+
+sudo mkdir /var/www/your_domain
+
+<img width="521" height="49" alt="image" src="https://github.com/user-attachments/assets/d74395c3-8bdf-4eb7-929e-998a6bcd17e1" />
+
+A continuación, le asigno la propiedad del directorio con la variable de entorno $USER, que que es la que hará referencia a su 
+usuario de sistema actual, para ello escribo lo siguiente:
+
+sudo chown -R $USER:$USER /var/www/your_domain
+
+<img width="585" height="52" alt="image" src="https://github.com/user-attachments/assets/729b52ec-df9f-430a-a0c3-7ed32a2afa57" />
+
+Luego abro un nuevo un nuevo archivo de configuración en el directorio sites-available de Apache usando el editor de línea de 
+comandos, en mi caso utilizo nano
+
+sudo nano /etc/apache2/sites-available/your_domain.conf
+
+<img width="579" height="34" alt="image" src="https://github.com/user-attachments/assets/857cc5b2-63eb-47d4-b27e-292570f04629" />
 
 
 
