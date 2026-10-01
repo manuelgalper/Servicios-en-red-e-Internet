@@ -118,6 +118,16 @@ sudo nano /etc/apache2/sites-available/your_domain.conf
 
 <img width="579" height="34" alt="image" src="https://github.com/user-attachments/assets/857cc5b2-63eb-47d4-b27e-292570f04629" />
 
+De esta manera, se creará un nuevo archivo en blanco, ahora lo que es copiar y pego la siguiente configuración básica:
+
+<img width="586" height="365" alt="image" src="https://github.com/user-attachments/assets/a6d9fd95-8dab-48e4-b90a-50ceb21d4d06" />
+
+Con esta configuración de VirtualHost, le indicamos a Apache que proporcione your_domain usando /var/www/your_domain como directorio 
+root web
+
+Ahora para habilitar el nuevo host virtual escribo el siguiente comando
+
+sudo a2ensite your_domain
 
 
 
