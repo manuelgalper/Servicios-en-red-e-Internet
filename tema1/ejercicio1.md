@@ -129,14 +129,41 @@ Ahora para habilitar el nuevo host virtual escribo el siguiente comando
 
 sudo a2ensite your_domain
 
+<img width="497" height="82" alt="image" src="https://github.com/user-attachments/assets/a84b5ee6-a504-449e-b33e-8db63d73b2b9" />
 
+Ahora una vez habilitado el nuevo host virtual sería conveniente deshabilitarlo el sitio web predeterminado que viene instalado 
+con Apache. Para deshabilitar el sitio web predeterminado de Apache, escribo lo siguiente:
 
+sudo a2dissite 000-default
 
+<img width="513" height="84" alt="image" src="https://github.com/user-attachments/assets/6a0758ea-ba00-4de8-a297-edfd823333d7" />
 
+Para asegurar de que el archivo de configuración no contenga errores de sintaxis, ejecuto lo siguiente:
 
+sudo apache2ctl configtest
 
+<img width="694" height="79" alt="image" src="https://github.com/user-attachments/assets/ce730337-daf0-49bf-ae5a-ec7ba8e2abaf" />
 
+Por último, vuelvo a cargar Apache para que estos cambios surtan efecto, lo hago con el siguiente comando
 
+sudo systemctl reload apache2
+
+<img width="510" height="28" alt="image" src="https://github.com/user-attachments/assets/94945dd2-4568-4a71-ba87-7f22307309c8" />
+
+Ahora, vemos que el nuevo sitio web está activo, pero el directorio root web /var/www/your_domain todavía está vacío. Entonces lo
+que hago es crear un archivo index.html en esa ubicación para poder probar que el host virtual funcione según lo previsto:
+
+nano /var/www/your_domain/index.html
+
+<img width="558" height="15" alt="image" src="https://github.com/user-attachments/assets/68c218cb-c2ab-4d3b-9a37-c7622464a672" />
+
+Y ahora incluyo el siguiente contenido en este archivo:
+
+<img width="436" height="37" alt="image" src="https://github.com/user-attachments/assets/4aedd4b6-ee5c-4ad8-a65c-d308b7a1e262" />
+
+Ahora, me voy al navegador y accedo al nombre de dominio o la dirección IP de su servidor una vez más:
+
+http://server_domain_or_IP
 
 
 
