@@ -161,10 +161,156 @@ Y ahora incluyo el siguiente contenido en este archivo:
 
 <img width="436" height="37" alt="image" src="https://github.com/user-attachments/assets/4aedd4b6-ee5c-4ad8-a65c-d308b7a1e262" />
 
-Ahora, me voy al navegador y accedo al nombre de dominio o la dirección IP de su servidor una vez más:
+Ahora, me voy al navegador, escribo http://localhost y vemos que sale una página como la siguiente
 
-http://server_domain_or_IP
+<img width="1012" height="641" alt="image" src="https://github.com/user-attachments/assets/2eaf44df-1f15-42a8-842a-90eeb471bec5" />
 
+Y vemos que el host virtual de Apache está funcionando según lo previsto
 
+# Nota sobre DirectoryIndex en Apache
 
+Para cambiar este comportamiento se deberá editar el archivo /etc/apache2/mods-enabled/dir.conf y modificar el orden en el que el 
+archivo index.php se enumera en la directiva DirectoryIndex, para ello escribo el siguiente comando
+
+sudo nano /etc/apache2/mods-enabled/dir.conf
+
+<img width="621" height="24" alt="image" src="https://github.com/user-attachments/assets/fb25a92b-7b6f-45b2-98d9-a5ee4e9e19fd" />
+
+<img width="570" height="55" alt="image" src="https://github.com/user-attachments/assets/eea6cbe3-c389-4d96-90c5-92dc0abd872e" />
+
+Después de guardar y cerrar el archivo, me deberá volver a cargar Apache para que los cambios surtan efecto
+
+sudo systemctl reload apache2
+
+<img width="515" height="35" alt="image" src="https://github.com/user-attachments/assets/f05a1fd8-0474-4bfa-99ea-d7b76a4bddd8" />
+
+En el siguiente paso, creamos una secuencia de comandos PHP para probar que PHP esté correctamente instalado y configurado 
+en nuestro servidor.
+
+# Paso 5: Probar el procesamiento de PHP en su servidor web
+
+En este apartado que dispone de una ubicación personalizada para alojar los archivos y las carpetas de su sitio web, vamos a 
+crear una secuencia de comandos PHP de prueba para verificar que Apache pueda gestionar solicitudes y procesar solicitudes de 
+archivos PHP. Lo primero que hago es crear un archivo nuevo llamado info.php dentro de la carpeta root web personalizada
+
+nano /var/www/your_domain/info.php
+
+<img width="545" height="22" alt="image" src="https://github.com/user-attachments/assets/a073bfa5-25af-4c1a-84ab-270ddff6cb14" />
+
+Con este comando se abrirá un archivo vacío. Ahora añado el siguiente texto, que es el código PHP válido, dentro del archivo
+
+<img width="691" height="122" alt="image" src="https://github.com/user-attachments/assets/63d769ff-9c67-4173-94fd-904556ab39cf" />
+
+Cuando haya terminado, guardo y cierro el archivo
+
+Para probar esta secuencia de comandos, me voy al navegador, escribo http://localhost/info.php y sale la siguiente página
+
+<img width="1016" height="576" alt="image" src="https://github.com/user-attachments/assets/b710b8a6-367d-437e-801e-62bc63f237bf" />
+
+En esta página, se proporciona información básica sobre su servidor desde la perspectiva de PHP. Es útil para la depuración y para 
+asegurarse de que sus ajustes se apliquen correctamente
+
+Si puede ver esta página en su navegador, su instalación de PHP funciona según lo previsto
+
+# Paso 6: Probar la conexión con la base de datos desde PHP (opcional)
+
+En este último apartado vamos a crear  una base de datos denominada example_database y un usuario llamado example_user, pero 
+puede sustituir estos nombres por valores diferentes
+
+Lo que hago primero es establecer la conexión con la consola de MySQL usando la cuenta root
+
+sudo mysql
+
+<img width="533" height="240" alt="image" src="https://github.com/user-attachments/assets/4926100a-0800-4900-9121-7ff6d7c52478" />
+
+Para crear una base de datos nueva, ejecuto el siguiente comando desde la consola de MySQL
+
+mysql > CREATE DATABASE example_database;
+
+<img width="285" height="76" alt="image" src="https://github.com/user-attachments/assets/d38468c3-63da-41cd-900d-cf0074dc2926" />
+
+Ahora el siguiente comando crea un usuario nuevo llamado example_user, que utiliza mysql_native_password como método de autenticación 
+predeterminado. Definimos la contraseña de este usuario como password, pero debe sustituir este valor por una contraseña segura de 
+su elección.
+
+mysql > CREATE USER 'example_user'@'%' IDENTIFIED BY 'Password_1';
+
+<img width="455" height="62" alt="image" src="https://github.com/user-attachments/assets/61a9f5f3-31d5-4875-a265-e9747a525719" />
+
+Ahora, le damos permiso a este usuario a la base de datos example_database:
+
+mysql > GRANT ALL ON example_database.* TO 'example_user';
+
+<img width="407" height="69" alt="image" src="https://github.com/user-attachments/assets/4179175e-6b88-4149-8bd1-df28ba32e51c" />
+
+Esto proporcionará al usuario example_user privilegios completos sobre la base de datos example_database y, al mismo tiempo, 
+evitará que este usuario cree o modifique otras bases de datos en su servidor.
+
+Ahora, cierro el shell de MySQL con lo siguiente
+
+mysql > exit
+
+<img width="321" height="53" alt="image" src="https://github.com/user-attachments/assets/a38f4017-042d-4507-a355-0c7e1506fc5d" />
+
+mysql -u example_user -p
+
+<img width="558" height="229" alt="image" src="https://github.com/user-attachments/assets/1f0b9b19-07b9-46f3-97cd-fabde2f6b04e" />
+
+Después de iniciar sesión en la consola de MySQL, confirmo que tenga acceso a la base de datos example_database
+
+mysql > SHOW DATABASES;
+
+<img width="155" height="25" alt="image" src="https://github.com/user-attachments/assets/bc80d85a-4505-4626-b9e4-b8541f387e66" />
+
+Con esto se generará el siguiente resultado
+
+<img width="170" height="155" alt="image" src="https://github.com/user-attachments/assets/a86ee9b4-f96f-4f12-8c73-c131a469e7cc" />
+
+A continuación, crearemos una tabla de prueba denominada todo_list: Desde la consola de MySQL, ejecute la siguiente instrucción
+
+mysql> CREATE TABLE example_database.todo_list (
+mysql>          item_id INT AUTO_INCREMENT,
+mysql>          content VARCHAR(255),
+mysql>          PRIMARY KEY(item_id)
+mysql> );
+
+<img width="342" height="132" alt="image" src="https://github.com/user-attachments/assets/2f3d3e2f-1edd-4734-82be-1ab0208a9ea7" />
+
+Ahora voy a insertar algunas filas de contenido en la tabla de prueba. Es posible que quiera repetir el siguiente comando algunas 
+veces, usando valores diferentes
+
+mysql > INSERT INTO example_database.todo_list (content) VALUES ("My first important item");
+
+<img width="618" height="67" alt="image" src="https://github.com/user-attachments/assets/04f89005-4d01-4b30-ade6-f7a2b0116c35" />
+
+Para confirmar que los datos se guardaron correctamente en su tabla, ejecute lo siguiente
+
+mysql > SELECT * FROM example_database.todo_list;
+
+<img width="333" height="26" alt="image" src="https://github.com/user-attachments/assets/7d8c483f-e1ee-42f2-a11e-fec1c7c9df97" />
+
+Y aparece el siguiente resultado
+
+<img width="267" height="128" alt="image" src="https://github.com/user-attachments/assets/78479927-d093-45ac-a017-8cd6bcba6038" />
+
+Después de confirmar que haya datos válidos en la tabla de prueba, cierro la consola de MySQL
+
+mysql > exit
+
+<img width="327" height="49" alt="image" src="https://github.com/user-attachments/assets/c1d34133-b387-4515-a085-28562f6ee28a" />
+
+Ahora, se podrá crear una secuencia de comandos PHP que se conecte a MySQL y realice consultas relacionadas con su contenido.
+Para ello creo un nuevo archivo PHP en su directorio web root personalizado usando su editor preferido.
+
+nano /var/www/your_domain/todo_list.php
+
+<img width="584" height="18" alt="image" src="https://github.com/user-attachments/assets/17fe1dce-3499-4e2f-9b39-98fb802058c7" />
+
+Ahora copio este contenido en la secuencia de comandos todo_listo.php
+
+<img width="537" height="271" alt="image" src="https://github.com/user-attachments/assets/f40b6c1c-5dc6-426e-9445-7670cc70ab5e" />
+
+Ahora guardo y cierro el archivo cuando finalice la edición
+
+Ahora me voy al navegador y escribo http://localhost/todo_listo.php
 
