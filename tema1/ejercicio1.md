@@ -312,5 +312,5 @@ Ahora copio este contenido en la secuencia de comandos todo_listo.php
 
 Ahora guardo y cierro el archivo cuando finalice la edición
 
-Ahora me voy al navegador y escribo http://localhost/todo_listo.php
+Ahora me voy al navegador y escribo http://localhost/todo_list.php
 
