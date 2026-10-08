@@ -308,7 +308,7 @@ nano /var/www/your_domain/todo_list.php
 
 Ahora copio este contenido en la secuencia de comandos todo_listo.php
 
-<img width="537" height="271" alt="image" src="https://github.com/user-attachments/assets/f40b6c1c-5dc6-426e-9445-7670cc70ab5e" />
+<img width="691" height="284" alt="image" src="https://github.com/user-attachments/assets/78047219-ea1b-4d6f-a3a3-896eb0cf7876" />
 
 Ahora guardo y cierro el archivo cuando finalice la edición
 
