@@ -225,23 +225,23 @@ sudo mysql
 
 Para crear una base de datos nueva, ejecuto el siguiente comando desde la consola de MySQL
 
-mysql > CREATE DATABASE example_database;
+mysql > CREATE DATABASE example_database2;
 
-<img width="285" height="76" alt="image" src="https://github.com/user-attachments/assets/d38468c3-63da-41cd-900d-cf0074dc2926" />
+<img width="284" height="38" alt="image" src="https://github.com/user-attachments/assets/1d701693-d944-4b83-a3bc-db4314e9de8e" />
 
-Ahora el siguiente comando crea un usuario nuevo llamado example_user, que utiliza mysql_native_password como método de autenticación 
+Ahora el siguiente comando crea un usuario nuevo llamado example_user2, que utiliza mysql_native_password como método de autenticación 
 predeterminado. Definimos la contraseña de este usuario como password, pero debe sustituir este valor por una contraseña segura de 
 su elección.
 
-mysql > CREATE USER 'example_user'@'%' IDENTIFIED BY 'Password_1';
+mysql > CREATE USER 'example_user2'@'%' IDENTIFIED BY 'Password_2';
 
-<img width="455" height="62" alt="image" src="https://github.com/user-attachments/assets/61a9f5f3-31d5-4875-a265-e9747a525719" />
+<img width="464" height="32" alt="image" src="https://github.com/user-attachments/assets/f2a4c489-18fd-4ef4-b2c6-1e8abf27997f" />
 
 Ahora, le damos permiso a este usuario a la base de datos example_database:
 
-mysql > GRANT ALL ON example_database.* TO 'example_user';
+mysql > GRANT ALL ON example_database2.* TO 'example_user2';
 
-<img width="407" height="69" alt="image" src="https://github.com/user-attachments/assets/4179175e-6b88-4149-8bd1-df28ba32e51c" />
+<img width="411" height="41" alt="image" src="https://github.com/user-attachments/assets/7cc00504-a3a2-4e10-9638-aa7084f817c3" />
 
 Esto proporcionará al usuario example_user privilegios completos sobre la base de datos example_database y, al mismo tiempo, 
 evitará que este usuario cree o modifique otras bases de datos en su servidor.
@@ -250,7 +250,7 @@ Ahora, cierro el shell de MySQL con lo siguiente
 
 mysql > exit
 
-<img width="321" height="53" alt="image" src="https://github.com/user-attachments/assets/a38f4017-042d-4507-a355-0c7e1506fc5d" />
+<img width="307" height="49" alt="image" src="https://github.com/user-attachments/assets/d17e958d-cfbd-4e81-b861-4caf1b58e5fc" />
 
 mysql -u example_user -p
 
