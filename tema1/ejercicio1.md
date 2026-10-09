@@ -252,46 +252,46 @@ mysql > exit
 
 <img width="307" height="49" alt="image" src="https://github.com/user-attachments/assets/d17e958d-cfbd-4e81-b861-4caf1b58e5fc" />
 
-mysql -u example_user -p
+mysql -u example_user2 -p
 
-<img width="558" height="229" alt="image" src="https://github.com/user-attachments/assets/1f0b9b19-07b9-46f3-97cd-fabde2f6b04e" />
+<img width="542" height="202" alt="image" src="https://github.com/user-attachments/assets/73afea34-40be-4154-a339-c298f9ce30b5" />
 
 Después de iniciar sesión en la consola de MySQL, confirmo que tenga acceso a la base de datos example_database
 
 mysql > SHOW DATABASES;
 
-<img width="155" height="25" alt="image" src="https://github.com/user-attachments/assets/bc80d85a-4505-4626-b9e4-b8541f387e66" />
+<img width="153" height="23" alt="image" src="https://github.com/user-attachments/assets/184bad19-874f-434c-a8e3-b67d447bce6b" />
 
 Con esto se generará el siguiente resultado
 
-<img width="170" height="155" alt="image" src="https://github.com/user-attachments/assets/a86ee9b4-f96f-4f12-8c73-c131a469e7cc" />
+<img width="166" height="128" alt="image" src="https://github.com/user-attachments/assets/9860242a-11fc-4275-92c0-4d75c3146d25" />
 
 A continuación, crearemos una tabla de prueba denominada todo_list: Desde la consola de MySQL, ejecute la siguiente instrucción
 
-mysql> CREATE TABLE example_database.todo_list (
+mysql> CREATE TABLE example_database2.todo_list (
 mysql>          item_id INT AUTO_INCREMENT,
 mysql>          content VARCHAR(255),
 mysql>          PRIMARY KEY(item_id)
 mysql> );
 
-<img width="342" height="132" alt="image" src="https://github.com/user-attachments/assets/2f3d3e2f-1edd-4734-82be-1ab0208a9ea7" />
+<img width="343" height="99" alt="image" src="https://github.com/user-attachments/assets/b28c299c-82e9-4bf6-8465-ba87836768af" />
 
 Ahora voy a insertar algunas filas de contenido en la tabla de prueba. Es posible que quiera repetir el siguiente comando algunas 
 veces, usando valores diferentes
 
-mysql > INSERT INTO example_database.todo_list (content) VALUES ("My first important item");
+mysql > INSERT INTO example_database2.todo_list (content) VALUES ("My first important item");
 
-<img width="618" height="67" alt="image" src="https://github.com/user-attachments/assets/04f89005-4d01-4b30-ade6-f7a2b0116c35" />
+<img width="631" height="37" alt="image" src="https://github.com/user-attachments/assets/6547f587-1b9f-48c8-8e58-6386c27cc382" />
 
 Para confirmar que los datos se guardaron correctamente en su tabla, ejecute lo siguiente
 
-mysql > SELECT * FROM example_database.todo_list;
+mysql > SELECT * FROM example_database2.todo_list;
 
-<img width="333" height="26" alt="image" src="https://github.com/user-attachments/assets/7d8c483f-e1ee-42f2-a11e-fec1c7c9df97" />
+<img width="343" height="18" alt="image" src="https://github.com/user-attachments/assets/41e439b5-7615-406a-8940-a469c7b50e01" />
 
 Y aparece el siguiente resultado
 
-<img width="267" height="128" alt="image" src="https://github.com/user-attachments/assets/78479927-d093-45ac-a017-8cd6bcba6038" />
+<img width="261" height="101" alt="image" src="https://github.com/user-attachments/assets/cef33139-daf2-486c-975b-2dd64d0052df" />
 
 Después de confirmar que haya datos válidos en la tabla de prueba, cierro la consola de MySQL
 
