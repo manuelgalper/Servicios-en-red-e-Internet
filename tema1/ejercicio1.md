@@ -314,3 +314,6 @@ Ahora guardo y cierro el archivo cuando finalice la edición
 
 Ahora me voy al navegador y escribo http://localhost/todo_list.php
 
+<img width="1015" height="569" alt="image" src="https://github.com/user-attachments/assets/eabe4b76-41b6-452f-aef7-aa2d8fd6b247" />
+
+
