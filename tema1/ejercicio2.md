@@ -27,20 +27,25 @@ Y una vez entrado en el fichero ports.conf debajo del Listen 80 escribo Listen 8
 
 <img width="699" height="232" alt="image" src="https://github.com/user-attachments/assets/3788e549-0ebd-482f-9217-89243db5df08" />
 
-Ahora reviso el sitio predeterminado con el siguiente comando
-
-sudo nano /etc/apache2/sites-available/000-default.conf
-
-<img width="756" height="20" alt="image" src="https://github.com/user-attachments/assets/da5afec2-be88-432a-b116-3c8bc4185931" />
-
 Ahora compruebo la configuración y reinicio apache
 
 sudo apache2ctl configtest
 sudo systemctl restart apache2
 
+<img width="801" height="110" alt="image" src="https://github.com/user-attachments/assets/223f5675-e025-4463-ba5d-2e1acf6d4a00" />
 
+Ahora me voy al navegador y escribo http://localhost:81, y vemos que apache responde
+
+<img width="1013" height="611" alt="image" src="https://github.com/user-attachments/assets/7fc82f2e-7aae-4dd3-9671-d03e7e4dd8b2" />
 
 # 2. Añadir el dominio “marisma.intranet” en el fichero “hosts”
+
+Ahora lo siguiente es añadir el dominio "marisma.intranet" en el fichero hosts, para ello edito el fichero /etc/hosts lo hago con
+el siguiente comando
+
+sudo nano /etc/hosts
+
+
 
 # 3. Cambia la directiva “ServerTokens” para mostrar el nombre del producto.
 
