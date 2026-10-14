@@ -45,11 +45,46 @@ el siguiente comando
 
 sudo nano /etc/hosts
 
+<img width="455" height="19" alt="image" src="https://github.com/user-attachments/assets/6d5b3f76-05e2-4782-8d9f-49938102c435" />
 
+Ahora una vez que estoy dentro del fichero /etc/hosts añado la línea 127.0.0.1 marisma.intranet
+
+<img width="804" height="369" alt="image" src="https://github.com/user-attachments/assets/2e3cdf9c-f536-481d-94c1-2f74847b3597" />
+
+Y ahora lo que hago es comprobar la resolución del nombre para ello escribo el siguiente comando
+
+getent hosts marisma.intranet
+
+Y vemos que aparece la 12.0.0.1 marisma.intranet
+
+<img width="512" height="50" alt="image" src="https://github.com/user-attachments/assets/152402d8-7d9c-4dbc-bb2e-6f63224fd23b" />
+
+Por último en el navegador pongo http://marisma.intranet y vemos que apache responde
+
+<img width="1013" height="607" alt="image" src="https://github.com/user-attachments/assets/48ae0a1a-be6b-4b23-adfc-c609dfb168b3" />
 
 # 3. Cambia la directiva “ServerTokens” para mostrar el nombre del producto.
 
+En el siguiente apartado vamos a cambiar la directiva "ServerTokens" para mostrar el nombre del producto, para ello edito el fichero
+sudo nano /etc/apache2/conf-available/security.conf
+
+<img width="671" height="20" alt="image" src="https://github.com/user-attachments/assets/d6a784b6-edf6-4e2c-ba33-35d891158830" />
+
+Una vez que estoy dentro del fichero sudo nano /etc/apache2/conf-available/security.conf busco la directiva ServerTokens y establezco
+ServerTokens ProductOnly
+
+<img width="801" height="329" alt="image" src="https://github.com/user-attachments/assets/348bd026-2cec-44e5-9edf-3955e7a0fe42" />
+
+Ahora aplico los siguiente cambios
+
+sudo apache2ctl configtest
+sudo systemctl reload apache2
+
+<img width="798" height="92" alt="image" src="https://github.com/user-attachments/assets/1f831aac-dabd-4370-bbc2-9809000fcdef" />
+
 # 4. Comprueba si se visualiza el pie de página en las páginas generadas por Apache (por ejemplo, en las páginas de error). Cambia el valor de la directiva “ServerSignature” y comprueba que funciona correctamente.
+
+
 
 # 5. Crea un directorio “prueba” y otro directorio “prueba2”. Incluye un par de páginas en cada una de ellas.
 
