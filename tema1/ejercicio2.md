@@ -152,7 +152,19 @@ sudo nano /var/www/html/prueba/pagina2.html
 
 Ahora hago lo mismo en prueba2
 
+Y ahora compruebo que puedo acceder a las cuatro páginas
+
+<img width="1014" height="573" alt="image" src="https://github.com/user-attachments/assets/2d8df314-a52e-41b2-ab5a-6dfb6e58c456" />
+
+<img width="1013" height="573" alt="image" src="https://github.com/user-attachments/assets/13579235-20b5-47b1-b086-63d9427b9743" />
+
+<img width="1013" height="576" alt="image" src="https://github.com/user-attachments/assets/9b20f0e0-bdb6-47f3-8c95-eace62e3d037" />
+
+<img width="1011" height="572" alt="image" src="https://github.com/user-attachments/assets/31c156b4-54f2-46c0-949d-3e3e729edd2f" />
+
 # 6. Redirecciona el contenido de la carpeta “prueba” hacia “prueba2”
+
+
 
 # 7. Es posible redireccionar tan solo una página en lugar de toda la carpeta. Pruébalo.
 
