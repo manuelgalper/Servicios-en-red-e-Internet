@@ -84,9 +84,73 @@ sudo systemctl reload apache2
 
 # 4. Comprueba si se visualiza el pie de página en las páginas generadas por Apache (por ejemplo, en las páginas de error). Cambia el valor de la directiva “ServerSignature” y comprueba que funciona correctamente.
 
+Lo siguiente que vamos a hacer es comprobar si se visualiza el pie de página en las páginas de Apache, para ello abro el fichero
 
+sudo nano /etc/apache2/conf-available/security.conf
+
+<img width="663" height="20" alt="image" src="https://github.com/user-attachments/assets/06c0d6fa-5960-4df5-94aa-aab28ff7ba93" />
+
+Y una vez entrado en el fichero sudo nano /etc/apache2/conf-available/security.conf vemos que se visualiza 
+
+<img width="801" height="297" alt="image" src="https://github.com/user-attachments/assets/804e9fd1-2c26-48c4-8b5e-74ab40812d00" />
+
+Ahora reinicio apache con el comando sudo systemctl reload apache2
+
+<img width="516" height="19" alt="image" src="https://github.com/user-attachments/assets/369f1f6a-b8b8-4632-a602-e436ce002841" />
+
+Para comprobarlo me voy al navegador y escribo una página inexistente como por ejemplo http://localhost/error404 y vemos que la 
+directiva funciona correctamente ya que al provocar el error NotFound(404) ahora aparece la línea de pie de página que dice Apache 
+Server at localhost Port 80
+
+<img width="1012" height="568" alt="image" src="https://github.com/user-attachments/assets/7ed77d6e-2990-45e7-aeec-1156ad154e46" />
+
+Ahora para cambiar el valor de la directiva “ServerSignature” y comprueba que funciona correctamente, lo primero que hago es volver
+a abrir el archivo de configuración sudo nano /etc/apache2/conf-available/security.conf
+
+<img width="660" height="19" alt="image" src="https://github.com/user-attachments/assets/aa0ba69e-c03a-4ce1-a6d6-099edb975a6d" />
+
+Ahora modifico la directiva cambiando el valor de On a Off
+
+<img width="802" height="324" alt="image" src="https://github.com/user-attachments/assets/f320c989-1c3b-4507-a5b6-b54b3b69a0ec" />
+
+Luego reinicio Apache para aplicar los cambios en el servidor
+
+sudo systemctl restart apache2
+
+<img width="510" height="22" alt="image" src="https://github.com/user-attachments/assets/04a1e743-12bf-42f4-af1e-62505801fdc7" />
+
+Ahora vuelvo al navegador y compruebo el resultado, y vemos que en la imagen se puede ver claramente que el cambio a ServerSignature Off 
+ha funcionado correctamente.
+
+<img width="1013" height="572" alt="image" src="https://github.com/user-attachments/assets/ef99fbaa-ca06-4031-ad09-1cd7d0fb3b5e" />
 
 # 5. Crea un directorio “prueba” y otro directorio “prueba2”. Incluye un par de páginas en cada una de ellas.
+
+En este apartado vamos a crear dos directorios, uno que se va a llamar prueba y otro que se va a llamar prueba2, para crear estos
+dos directorios escribo lo siguiente
+
+sudo mkdir -p /var/www/html/prueba
+sudo mkdir -p /var/www/html/prueba2
+
+<img width="558" height="31" alt="image" src="https://github.com/user-attachments/assets/166d84dc-7297-4d93-9d9d-f0f65b7bfd1c" />
+
+Ahora voy a incluir un par de páginas en el directorio prueba, para ello escribo el siguiente comando
+
+sudo nano /var/www/html/prueba/index.html
+
+<img width="599" height="21" alt="image" src="https://github.com/user-attachments/assets/16793bee-4a48-496f-993e-eb264fcf5952" />
+
+<img width="802" height="225" alt="image" src="https://github.com/user-attachments/assets/eda369ab-6ac5-42c9-bfb8-529ac199b743" />
+
+Ahora creo la segunda
+
+sudo nano /var/www/html/prueba/pagina2.html
+
+<img width="608" height="22" alt="image" src="https://github.com/user-attachments/assets/b38f0a4d-dd58-4da0-967a-2a0d5f5fc81d" />
+
+<img width="802" height="213" alt="image" src="https://github.com/user-attachments/assets/4c7d83dc-62eb-4a92-a89e-918d5e9eb648" />
+
+Ahora hago lo mismo en prueba2
 
 # 6. Redirecciona el contenido de la carpeta “prueba” hacia “prueba2”
 
