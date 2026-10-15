@@ -164,6 +164,11 @@ Y ahora compruebo que puedo acceder a las cuatro páginas
 
 # 6. Redirecciona el contenido de la carpeta “prueba” hacia “prueba2”
 
+En este apartado vamos a ver como redireccionar el contenido de la carpeta "prueba" hacia "prueba2", para ello compruebo que el módulo
+está habilitado
+
+sudo a2enmod alias
+
 
 
 # 7. Es posible redireccionar tan solo una página en lugar de toda la carpeta. Pruébalo.
