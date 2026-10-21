@@ -169,12 +169,85 @@ está habilitado
 
 sudo a2enmod alias
 
+<img width="450" height="78" alt="image" src="https://github.com/user-attachments/assets/754722d5-449f-4a22-8ae1-4d21ffb9bf94" />
 
+Ahora edito el archivo de configuración del sitio
+
+sudo nano /etc/apache2/sites-available/000-default.conf
+
+<img width="690" height="23" alt="image" src="https://github.com/user-attachments/assets/6ae25ef9-0477-462c-ad5d-663a02ddd6a3" />
+
+Luego dentro de un bloque <VirtualHost>, añado Redirect permanent /prueba/ /prueba2/
+
+<img width="799" height="292" alt="image" src="https://github.com/user-attachments/assets/b060b928-c756-4240-bba5-6ac053671c7b" />
+
+Ahora valido y reiniciamos el servidor
+
+sudo apache2ctl configtest
+sudo systemctl reload apache2
+
+<img width="798" height="109" alt="image" src="https://github.com/user-attachments/assets/745a0e1f-820f-4dfe-a0fd-47d71e37d889" />
+
+Ahora me voy al navegador y escribo http://localhost/prueba/ y vemos que la redirección se ha completado con éxito, ya que se ha 
+visualizando correctamente el contenido de la carpeta destino con el mensaje "Primera página de prueba2".
 
 # 7. Es posible redireccionar tan solo una página en lugar de toda la carpeta. Pruébalo.
 
+Sí, se puede redireccionar únicamente una página. Me vuelvo archivo de configuración del sitio
+
+sudo nano /etc/apache2/sites-available/000-default.conf
+
+<img width="690" height="24" alt="image" src="https://github.com/user-attachments/assets/7ad5b6c0-0b09-4998-b074-efba74dca28f" />
+
+Ahora añado una regla específica como por ejemplo Redirect permanent /prueba/pagina2.html /prueba2/pagina2.html
+
+<img width="798" height="294" alt="image" src="https://github.com/user-attachments/assets/2bf981fe-8cd3-4b67-9f04-6b913b8bfff6" />
+
+Ahora valido y recargo apache
+
+sudo apache2ctl configtest
+sudo systemctl reload apache2
+
+<img width="802" height="93" alt="image" src="https://github.com/user-attachments/assets/d948db5b-dc52-470b-bb2a-ee4e89978766" />
+
+Ahora compruebo ambas rutas
+
+http://localhost/prueba/pagina2.html debe redirigir a /prueba2/pagina2.html.
+http://localhost/prueba/ debe seguir mostrando la página de prueba.
+
+<img width="1015" height="570" alt="image" src="https://github.com/user-attachments/assets/1462c04e-46ec-4079-aa25-f787c8d4d052" />
+
+<img width="1013" height="572" alt="image" src="https://github.com/user-attachments/assets/8f87552d-4509-4b8b-9603-21ea475eb66b" />
+
 # 8. Usa la directiva userdir
 
+
+
 # 9. Usa la directiva alias para redireccionar a una carpeta dentro del directorio de usuario.
+
+Vamos a usar la directiva para redireccionar a una carpeta dentro del directorio de usuario, para ello abro el archivo de configuración
+
+sudo nano /etc/apache2/sites-available/000-default.conf
+
+<img width="684" height="18" alt="image" src="https://github.com/user-attachments/assets/c994b112-3768-4812-ab38-13eb2a94f893" />
+
+Ahora añado el alias y sus permisos
+
+<img width="468" height="164" alt="image" src="https://github.com/user-attachments/assets/d5d0c3bc-d423-4d8b-891c-0ada0cb5c783" />
+
+Ahora creo la carpeta de prueba
+
+mkdir -p /home/manuel/carpeta_privada
+
+<img width="563" height="37" alt="image" src="https://github.com/user-attachments/assets/36c58632-7b5e-468b-9226-94ded7eb8fd9" />
+
+Ahora dentro de la carpeta privada creo el archivo index.html lo hago con el siguiente comando
+
+nano /home/manuel/carpeta_privada/index.html
+
+<img width="617" height="23" alt="image" src="https://github.com/user-attachments/assets/10278b68-6769-4b5c-99bc-df81ca2cb2e7" />
+
+<img width="803" height="334" alt="image" src="https://github.com/user-attachments/assets/344aadb1-8738-4462-913b-72f6f6300b3f" />
+
 
 # 10.¿Para qué sirve la directiva Options y dónde aparece. Comprueba si apache indexa los directorios. Si es así, ¿cómo lo desactivamos?
