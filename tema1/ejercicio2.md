@@ -249,5 +249,24 @@ nano /home/manuel/carpeta_privada/index.html
 
 <img width="803" height="334" alt="image" src="https://github.com/user-attachments/assets/344aadb1-8738-4462-913b-72f6f6300b3f" />
 
+Ahora doy permisos de lectura y ejecución para que Apache pueda acceder lo hago con los siguientes comandos
+
+chmod 755 /home/manuel
+chmod 755 /home/manuel/carpeta_privada
+
+<img width="587" height="35" alt="image" src="https://github.com/user-attachments/assets/ff1b2709-500a-4734-aff6-7d2b4ec1b673" />
+
+Una vez dado los permisos, guardo, valido y reinicio Apache
+
+sudo apache2ctl configtest
+sudo systemctl restart apache2
+
+<img width="797" height="110" alt="image" src="https://github.com/user-attachments/assets/a1372b48-054b-4007-aabd-b2b73ffb4bda" />
 
 # 10.¿Para qué sirve la directiva Options y dónde aparece. Comprueba si apache indexa los directorios. Si es así, ¿cómo lo desactivamos?
+
+Controla qué características y funciones del servidor están disponibles en un directorio específico (por ejemplo, si se permite listar 
+archivos, seguir enlaces simbólicos o ejecutar scripts CGI).
+
+Aparece dentro de los bloques <Directory> en los archivos de configuración de sitios (sites-available/*), en el archivo general apache2.conf,
+o en archivos locales .htaccess.
