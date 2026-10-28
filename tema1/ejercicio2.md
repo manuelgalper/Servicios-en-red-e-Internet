@@ -221,6 +221,31 @@ http://localhost/prueba/ debe seguir mostrando la página de prueba.
 
 # 8. Usa la directiva userdir
 
+Para usar la directiva userdir en linux lo primero que hago es ejecutarla con permisos de administrador (sudo), lo hago con el
+comando 
+
+sudo a2enmod userdir
+
+<img width="459" height="78" alt="image" src="https://github.com/user-attachments/assets/63dbc43a-df27-4013-92b4-e4e8a792ac9d" />
+
+Ahora una vez que haya ejecutado la directiva userdir voy a crear una carpeta web llamada public_html, lo hago con el siguiente 
+comando
+
+mkdir /home/manuel/public_html
+
+<img width="519" height="20" alt="image" src="https://github.com/user-attachments/assets/b1d90296-eb3c-45ae-9fb8-561c4c1b08c5" />
+
+Ahora creamos el archivo index.html dentro de la carpeta correcta que acabamos de generar
+
+nano /home/manuel/public_html/index.html
+
+<img width="631" height="19" alt="image" src="https://github.com/user-attachments/assets/8b3fd35c-1b15-468f-b233-3fc0282f4356" />
+
+<img width="285" height="159" alt="image" src="https://github.com/user-attachments/assets/d2ab8544-0744-4eff-bdbd-0352509eed79" />
+
+Luego le aplico los permisos correspondientes para que Apache pueda leer el home y la nueva carpeta
+
+<img width="555" height="34" alt="image" src="https://github.com/user-attachments/assets/7e4d492b-b6ea-496d-a372-9b2054e5ef78" />
 
 
 # 9. Usa la directiva alias para redireccionar a una carpeta dentro del directorio de usuario.
@@ -286,5 +311,15 @@ Para desactivarlo lo primero que hago es modificar la directiva Options dentro d
 ambiando el parámetro Indexes por -Indexes (añadiendo un signo menos) lo hago con el comando sudo nano /etc/apache2/sites-available/000-default.conf
 
 <img width="690" height="20" alt="image" src="https://github.com/user-attachments/assets/a4f90000-4580-43fd-862a-8bd3baef7397" />
+
+<img width="456" height="168" alt="image" src="https://github.com/user-attachments/assets/9c30dab3-c0fb-452c-89d7-dd3348951fd9" />
+
+Ahora guardo y reinicio apache
+
+sudo apache2ctl configtest
+sudo systemctl restart apache2
+
+<img width="803" height="91" alt="image" src="https://github.com/user-attachments/assets/10d102c0-6f89-4b76-b59b-563507d23bda" />
+
 
 
