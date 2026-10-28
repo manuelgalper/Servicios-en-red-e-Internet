@@ -30,6 +30,7 @@ Y una vez entrado en el fichero ports.conf debajo del Listen 80 escribo Listen 8
 Ahora compruebo la configuración y reinicio apache
 
 sudo apache2ctl configtest
+
 sudo systemctl restart apache2
 
 <img width="801" height="110" alt="image" src="https://github.com/user-attachments/assets/223f5675-e025-4463-ba5d-2e1acf6d4a00" />
@@ -78,6 +79,7 @@ ServerTokens ProductOnly
 Ahora aplico los siguiente cambios
 
 sudo apache2ctl configtest
+
 sudo systemctl reload apache2
 
 <img width="798" height="92" alt="image" src="https://github.com/user-attachments/assets/1f831aac-dabd-4370-bbc2-9809000fcdef" />
@@ -184,6 +186,7 @@ Luego dentro de un bloque <VirtualHost>, añado Redirect permanent /prueba/ /pru
 Ahora valido y reiniciamos el servidor
 
 sudo apache2ctl configtest
+
 sudo systemctl reload apache2
 
 <img width="798" height="109" alt="image" src="https://github.com/user-attachments/assets/745a0e1f-820f-4dfe-a0fd-47d71e37d889" />
@@ -206,6 +209,7 @@ Ahora añado una regla específica como por ejemplo Redirect permanent /prueba/p
 Ahora valido y recargo apache
 
 sudo apache2ctl configtest
+
 sudo systemctl reload apache2
 
 <img width="802" height="93" alt="image" src="https://github.com/user-attachments/assets/d948db5b-dc52-470b-bb2a-ee4e89978766" />
@@ -249,6 +253,16 @@ Luego le aplico los permisos correspondientes para que Apache pueda leer el home
 
 Ahora verifico y reinicio apache2
 
+sudo apachectl configtest
+
+sudo systemctl restart apache2
+
+<img width="802" height="78" alt="image" src="https://github.com/user-attachments/assets/fb5b20b7-c8c5-45bf-9efe-67a56240c8ee" />
+
+Por último me voy al navegador y escribo http://localhost/~manuel/ y vemos que la imagen funciona correctamente
+
+<img width="1013" height="572" alt="image" src="https://github.com/user-attachments/assets/aeda15d4-e046-4040-90b6-0c2172b94d04" />
+
 # 9. Usa la directiva alias para redireccionar a una carpeta dentro del directorio de usuario.
 
 Vamos a usar la directiva para redireccionar a una carpeta dentro del directorio de usuario, para ello abro el archivo de configuración
@@ -285,6 +299,7 @@ chmod 755 /home/manuel/carpeta_privada
 Una vez dado los permisos, guardo, valido y reinicio Apache
 
 sudo apache2ctl configtest
+
 sudo systemctl restart apache2
 
 <img width="797" height="110" alt="image" src="https://github.com/user-attachments/assets/a1372b48-054b-4007-aabd-b2b73ffb4bda" />
@@ -318,6 +333,7 @@ ambiando el parámetro Indexes por -Indexes (añadiendo un signo menos) lo hago 
 Ahora guardo y reinicio apache
 
 sudo apache2ctl configtest
+
 sudo systemctl restart apache2
 
 <img width="803" height="91" alt="image" src="https://github.com/user-attachments/assets/10d102c0-6f89-4b76-b59b-563507d23bda" />
