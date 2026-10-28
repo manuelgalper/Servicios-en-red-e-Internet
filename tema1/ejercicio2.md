@@ -241,12 +241,13 @@ nano /home/manuel/public_html/index.html
 
 <img width="631" height="19" alt="image" src="https://github.com/user-attachments/assets/8b3fd35c-1b15-468f-b233-3fc0282f4356" />
 
-<img width="285" height="159" alt="image" src="https://github.com/user-attachments/assets/d2ab8544-0744-4eff-bdbd-0352509eed79" />
+<img width="802" height="287" alt="image" src="https://github.com/user-attachments/assets/a1cda14e-f6a2-4c0b-9d45-39084a796898" />
 
 Luego le aplico los permisos correspondientes para que Apache pueda leer el home y la nueva carpeta
 
 <img width="555" height="34" alt="image" src="https://github.com/user-attachments/assets/7e4d492b-b6ea-496d-a372-9b2054e5ef78" />
 
+Ahora verifico y reinicio apache2
 
 # 9. Usa la directiva alias para redireccionar a una carpeta dentro del directorio de usuario.
 
