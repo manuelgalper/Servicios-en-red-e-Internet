@@ -263,6 +263,10 @@ sudo systemctl restart apache2
 
 <img width="797" height="110" alt="image" src="https://github.com/user-attachments/assets/a1372b48-054b-4007-aabd-b2b73ffb4bda" />
 
+<img width="744" height="459" alt="image" src="https://github.com/user-attachments/assets/f62fbeb9-05e8-406c-9f96-85ce0f91bfdb" />
+
+<img width="741" height="457" alt="image" src="https://github.com/user-attachments/assets/3429d776-24d5-4dcd-a5b8-0914a814fea5" />
+
 # 10.¿Para qué sirve la directiva Options y dónde aparece. Comprueba si apache indexa los directorios. Si es así, ¿cómo lo desactivamos?
 
 Controla qué características y funciones del servidor están disponibles en un directorio específico (por ejemplo, si se permite listar 
@@ -270,3 +274,17 @@ archivos, seguir enlaces simbólicos o ejecutar scripts CGI).
 
 Aparece dentro de los bloques <Directory> en los archivos de configuración de sitios (sites-available/*), en el archivo general apache2.conf,
 o en archivos locales .htaccess.
+
+# Comprobar si Apache indexa los directorios
+
+Por defecto, si entras a una carpeta de tu servidor que no tiene un archivo index.html o index.php, Apache listará de forma automática todos 
+los archivos y subcarpetas que contenga. Esto se conoce como indexación automática (un listado visual tipo explorador de archivos).
+
+# ¿Cómo lo desactivamos?
+
+Para desactivarlo lo primero que hago es modificar la directiva Options dentro del bloque <Directory> correspondiente en el archivo de configuración,
+ambiando el parámetro Indexes por -Indexes (añadiendo un signo menos) lo hago con el comando sudo nano /etc/apache2/sites-available/000-default.conf
+
+<img width="690" height="20" alt="image" src="https://github.com/user-attachments/assets/a4f90000-4580-43fd-862a-8bd3baef7397" />
+
+
