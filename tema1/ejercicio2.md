@@ -263,9 +263,9 @@ sudo systemctl restart apache2
 
 <img width="797" height="110" alt="image" src="https://github.com/user-attachments/assets/a1372b48-054b-4007-aabd-b2b73ffb4bda" />
 
-<img width="744" height="459" alt="image" src="https://github.com/user-attachments/assets/f62fbeb9-05e8-406c-9f96-85ce0f91bfdb" />
+Ahora me voy al navegador y pongo http://localhost/micarpeta y vemos que alias funciona correctamente
 
-<img width="741" height="457" alt="image" src="https://github.com/user-attachments/assets/3429d776-24d5-4dcd-a5b8-0914a814fea5" />
+
 
 # 10.¿Para qué sirve la directiva Options y dónde aparece. Comprueba si apache indexa los directorios. Si es así, ¿cómo lo desactivamos?
 
