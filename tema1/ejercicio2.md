@@ -365,6 +365,7 @@ nano crear_web.sh
 
 <img width="433" height="21" alt="image" src="https://github.com/user-attachments/assets/65d1f574-77ef-448f-b5b1-699c2f2abf7a" />
 
-<img width="802" height="549" alt="image" src="https://github.com/user-attachments/assets/9a55d428-b474-4150-a5b1-7d691762f1c0" />
+<img width="800" height="484" alt="image" src="https://github.com/user-attachments/assets/39c87cc5-970b-48de-95bf-4899ed9b2d12" />
+
 
 
