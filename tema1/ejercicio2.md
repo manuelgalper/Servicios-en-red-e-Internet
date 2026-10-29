@@ -339,4 +339,32 @@ sudo systemctl restart apache2
 <img width="803" height="91" alt="image" src="https://github.com/user-attachments/assets/10d102c0-6f89-4b76-b59b-563507d23bda" />
 
 
+# Actividad #2.2
+
+# Crea un script para cada uno de los siguientes problemas
+
+# Crea un script que añada un puerto de escucha en el fichero de configuración de Apache. El puerto se recibirá como parámetro en la llamada y se comprobará que no esté ya presente en el fichero de configuración.
+
+nano añadir_puerto.sh
+
+<img width="460" height="22" alt="image" src="https://github.com/user-attachments/assets/7c185e14-8de6-45f8-b2ca-db461be7a74e" />
+
+<img width="798" height="330" alt="image" src="https://github.com/user-attachments/assets/3602f672-0cfa-4bba-84fd-6590b98b7339" />
+
+# Crea un script que añada un nombre de dominio y una ip al fichero hosts. Debemos comprobar que no existe dicho dominio en el fichero hosts
+
+nano añadir_hosts.sh
+
+<img width="455" height="21" alt="image" src="https://github.com/user-attachments/assets/8ed9a8aa-e7bf-4f3f-a2be-36e74ae050a5" />
+
+<img width="799" height="313" alt="image" src="https://github.com/user-attachments/assets/5d18b281-3e48-40c7-9d4d-5cdf7885f446" />
+
+# Crea un script que nos permita crear una página web con un título, una cabecera y un mensaje
+
+nano crear_web.sh
+
+<img width="433" height="21" alt="image" src="https://github.com/user-attachments/assets/65d1f574-77ef-448f-b5b1-699c2f2abf7a" />
+
+<img width="802" height="549" alt="image" src="https://github.com/user-attachments/assets/9a55d428-b474-4150-a5b1-7d691762f1c0" />
+
 
