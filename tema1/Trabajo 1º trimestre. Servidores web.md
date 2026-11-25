@@ -244,7 +244,25 @@ Y de esta manera ya tendríamos WordPress instalado
 
 <img width="1014" height="606" alt="image" src="https://github.com/user-attachments/assets/be23f048-dbbe-4dc7-85ee-32bb9ab03c14" />
 
-
 # Activar el módulo “wsgi” para permitir la ejecución de aplicaciones Python
 
+Vamos a crear la aplicación wsgi, para ello creamos el directorio y el archivo de aplicación en /var/www/departamentos/app.py
+
+sudo mkdir -p /var/www/departamentos
+
+sudo nano /var/www/departamentos/app.py
+
+<img width="594" height="48" alt="image" src="https://github.com/user-attachments/assets/2ebfdbee-13bf-498a-8d7f-d1c1cd2f7206" />
+
+Ahora añado el siguiente código de prueba
+
+<img width="859" height="493" alt="image" src="https://github.com/user-attachments/assets/49ce9392-f23e-453a-9b7a-380a23373b1f" />
+
+Ahora le asigno los permisos
+
+sudo chown -R www-data:www-data /var/www/departamentos
+
+<img width="700" height="18" alt="image" src="https://github.com/user-attachments/assets/a74881e0-b8b6-4f07-a662-a5cfc258a93a" />
+
+Ahora creamos un archivo de contraseñas para proteger el acceso (por ejemplo, para el usuario profesor) 
 
