@@ -3,6 +3,36 @@ Vamos a instalar un servidor web interno para un instituto. Se Pide:
 # Instalación del servidor web apache. Usaremos dos dominios mediante el archivo hosts: centro.intranet y departamentos.centro.intranet. 
 # El primero servirá el contenido mediante wordpress y el segundo una aplicación en python
 
+Para simular los dominios internos en el servidor (y en los equipos clientes de prueba), editamos el archivo /etc/hosts y luego apuntamos 
+los nombres a la IP del servidor (o 127.0.0.1 en local).
+
+sudo nano /etc/hosts
+
+<img width="459" height="24" alt="image" src="https://github.com/user-attachments/assets/1d0abeaf-7210-453c-b759-e8901024ca5f" />
+
+Añadimos la siguiente línea:
+text
+127.0.0.1   centro.intranet departamentos.centro.intranet servidor2.centro.intranet
+
+<img width="806" height="264" alt="image" src="https://github.com/user-attachments/assets/af0f03ec-83f6-491a-86bd-50a8fc9da6a4" />
+
+Ahora para comprobar que funciona hacemos ping para comprobar si apuntan correctamente a nuestro equipo local
+
+ping -c 2 centro.intranet
+
+Y vemos que se muestra que el dominio centro.intranet resuelve directamente a 127.0.0.1 con un 0% de pérdida de paquetes 
+(2 packets transmitted, 2 received).
+
+<img width="512" height="148" alt="image" src="https://github.com/user-attachments/assets/04028d8a-9f07-4c0f-be35-646f41431a41" />
+
+Ahora hacemos lo mismo con los otros dos subdominios que hemos creado
+
+ping -c 1 departamentos.centro.intranet && ping -c 1 servidor2.centro.intranet
+
+Y vemos que los tres dominios resuelven correctamente a 127.0.0.1. Como vemos tanto departamentos.centro.intranet como servidor2.centro.intranet 
+responden sin pérdida de paquetes (aparece centro.intranet en la salida porque ping muestra el primer nombre asociado a esa IP en /etc/hosts)
+
+<img width="841" height="221" alt="image" src="https://github.com/user-attachments/assets/a5a24388-6015-4313-84d5-eb84bc570723" />
 
 # Activar los módulos necesarios para ejecutar php y acceder a mysql
 
@@ -15,6 +45,7 @@ Instala el servidor web Apache, el gestor de bases de datos MariaDB/MySQL, PHP c
 Una vez iniciado la máquina de Ubuntu empiezo con la instalación de Apache, para ello escribo en el terminal los siguientes comandos:
 
 sudo apt update
+
 sudo apt install apache2
 
 <img width="541" height="156" alt="image" src="https://github.com/user-attachments/assets/ad888f26-3825-4c82-ac29-fc8b1907f09b" />
@@ -80,3 +111,5 @@ Y ahora si quiero salir de la consola escribo lo siguiente:
 exit
 
 <img width="92" height="26" alt="image" src="https://github.com/user-attachments/assets/2bc942ed-4ee2-478c-bc97-598455c3dddd" />
+
+
