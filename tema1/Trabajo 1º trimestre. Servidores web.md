@@ -215,6 +215,31 @@ sudo systemctl reload apache2
 
 <img width="593" height="64" alt="image" src="https://github.com/user-attachments/assets/3afab1b5-09f5-4b7b-b694-811ee1c7d8c5" />
 
-Ahora nos vamos al navegador y ponemos http://centro.intranet
+Ahora nos vamos al navegador y ponemos http://centro.intranet y vemos que Apache y PHP ya están sirviendo WordPress correctamente 
+en http://centro.intranet
+
+<img width="1014" height="608" alt="image" src="https://github.com/user-attachments/assets/a8e57cad-f12b-47f9-be5f-35659d0ee822" />
+
+Para completar la instalación hago lo siguiente
+
+Seleccionar idioma:Hago clic en Español y pulsa el botón Continuar
+
+<img width="1014" height="604" alt="image" src="https://github.com/user-attachments/assets/972eed4d-6b64-42a2-b928-41f421e8be01" />
+
+Conectar la base de datos: en la siguiente pantalla pulso ¡Vamos a ello! y escribo los datos que creaste en MySQL (wordpress, wpuser 
+y la contraseña que le asigné)
+
+<img width="1013" height="608" alt="image" src="https://github.com/user-attachments/assets/bdac226a-ad2b-463d-a7c9-b01f0017421f" />
+
+<img width="1012" height="604" alt="image" src="https://github.com/user-attachments/assets/9c385f4e-a823-482d-bac0-84ab20a10362" />
+
+Pulsamos Enviar, luego Ejecutar la instalación, rellena el título del sitio junto con mi usuario y mi contraseña de administrador 
+y hago clic en Instalar WordPress.
+
+<img width="1013" height="603" alt="image" src="https://github.com/user-attachments/assets/a3639d60-f0c1-4fce-9ea7-348f190a0f16" />
+
+
+
+# Activar el módulo “wsgi” para permitir la ejecución de aplicaciones Python
 
 
