@@ -238,6 +238,11 @@ y hago clic en Instalar WordPress.
 
 <img width="1013" height="603" alt="image" src="https://github.com/user-attachments/assets/a3639d60-f0c1-4fce-9ea7-348f190a0f16" />
 
+<img width="1015" height="608" alt="image" src="https://github.com/user-attachments/assets/889bf69a-af85-4fef-923e-c48802ed4a44" />
+
+Y de esta manera ya tendríamos WordPress instalado
+
+<img width="1014" height="606" alt="image" src="https://github.com/user-attachments/assets/be23f048-dbbe-4dc7-85ee-32bb9ab03c14" />
 
 
 # Activar el módulo “wsgi” para permitir la ejecución de aplicaciones Python
