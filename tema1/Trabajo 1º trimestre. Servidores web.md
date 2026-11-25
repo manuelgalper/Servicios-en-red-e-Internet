@@ -110,6 +110,111 @@ Y ahora si quiero salir de la consola escribo lo siguiente:
 
 exit
 
+# Paso 3 Instalar PHP
+
+Lo siguiente que vamos a hacer es instalar el servidor PHP para almacenar y gestionar sus datos, para ello escribo el siguiente comando:
+
+sudo apt install php libapache2-mod-php php-mysql
+
+<img width="536" height="32" alt="image" src="https://github.com/user-attachments/assets/0188f31d-b216-4906-8381-bcd5b5bec1d3" />
+
+Ahora nos pide solicitar la instalación le digo S y luego ENTER 
+
+Y vemos que el proceso sigue ejecutando
+
+<img width="542" height="315" alt="image" src="https://github.com/user-attachments/assets/11b1bc6a-749f-4364-a758-8a4f3ad545d4" />
+
+Ahora una vez que se haya completado la instalación vamos a confirmar cuál es la versión de PHP, para ello escribo lo siguiente:
+
+php -v
+
+<img width="360" height="16" alt="image" src="https://github.com/user-attachments/assets/d1c8c8af-7de1-4689-b40d-793fbb543edb" />
+
+Y vemos que la versión es 8.14.11
+
+<img width="463" height="88" alt="image" src="https://github.com/user-attachments/assets/e4b15e7c-17da-46f2-b7b5-a65bf3fc019f" />
+
 <img width="92" height="26" alt="image" src="https://github.com/user-attachments/assets/2bc942ed-4ee2-478c-bc97-598455c3dddd" />
+
+# Paso 4 Instalar el módulo libapache2-mod-wsgi-py3 para ejecutar Python
+
+Para instalar el modulo libapache2-mod-wsgi-py3 para ejecutar Python lo hago con los siguientes comando
+
+sudo apt update
+
+sudo apt install libapache2-mod-wsgi-py3
+
+<img width="528" height="90" alt="image" src="https://github.com/user-attachments/assets/8aa13c53-2d13-4497-b4fa-24904a5f7807" />
+
+<img width="711" height="283" alt="image" src="https://github.com/user-attachments/assets/f527b038-e1a7-40ba-9f8b-c8cba5c657a6" />
+
+Una vez que lo tenemos instalado habilitamos los módulos requeridos en apache
+
+sudo a2enmod rewrite
+sudo a2enmod wsgi
+sudo systemctl restart apache2
+
+<img width="517" height="93" alt="image" src="https://github.com/user-attachments/assets/559f573b-f8b0-43a3-8a2b-82c46d63ce5d" />
+
+# Instala y configura wordpress
+
+Para instalar y configurar wordpress lo primero que hago es acceder a mysql
+
+sudo mysql
+
+<img width="530" height="214" alt="image" src="https://github.com/user-attachments/assets/fd0f6a25-937a-4186-8ea1-569e305d01e2" />
+
+Ahora creo la base de datos y su usuario
+
+<img width="499" height="211" alt="image" src="https://github.com/user-attachments/assets/342797f5-39ce-46d5-b920-4825b1dd4d4d" />
+
+Ahora descargamos wordpress en nuestra carpeta web
+
+cd /tmp
+wget https://wordpress.org/latest.tar.gz
+
+<img width="833" height="199" alt="image" src="https://github.com/user-attachments/assets/023f37e6-6572-48f4-85e6-cfe6575a8ed4" />
+
+Después descomprimo el archivo en /tmp
+
+tar xzvf latest.tar.gz
+
+<img width="861" height="360" alt="image" src="https://github.com/user-attachments/assets/4b275052-76ad-40b4-a7a9-b33471c24a40" />
+
+Ahora creamos la carpeta del sitio web y copiamos los archivos
+
+sudo mkdir -p /var/www/centro.intranet
+
+sudo cp -a /tmp/wordpress/. /var/www/centro.intranet/
+
+<img width="704" height="61" alt="image" src="https://github.com/user-attachments/assets/e4b89271-2e1c-4efc-8f53-37438099e481" />
+
+Ahora le damos los permisos
+
+sudo chown -R www-data:www-data /var/www/centro.intranet
+
+sudo chmod -R 755 /var/www/centro.intranet
+
+<img width="712" height="34" alt="image" src="https://github.com/user-attachments/assets/f8431590-7fb7-4ba0-beb5-83565f19d1e6" />
+
+Ahora creamos el VirtualHost para centro.intranet, para ello abro el archivo de configuración
+
+sudo nano /etc/apache2/sites-available/centro.intranet.conf
+
+<img width="732" height="19" alt="image" src="https://github.com/user-attachments/assets/57e5da9a-463f-4201-aa4a-abdf2cb8080b" />
+
+Dentro del archivo de configuración pegamos el siguiente bloque
+
+<img width="418" height="242" alt="image" src="https://github.com/user-attachments/assets/627b9536-bbcd-49be-b472-8c3660ffccc1" />
+
+Activamos el sitio y reiniciamos apache
+
+sudo a2ensite centro.intranet.conf
+
+sudo systemctl reload apache2
+
+<img width="593" height="64" alt="image" src="https://github.com/user-attachments/assets/3afab1b5-09f5-4b7b-b694-811ee1c7d8c5" />
+
+Ahora nos vamos al navegador y ponemos http://centro.intranet
 
 
