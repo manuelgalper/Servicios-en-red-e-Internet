@@ -266,3 +266,8 @@ sudo chown -R www-data:www-data /var/www/departamentos
 
 Ahora creamos un archivo de contraseñas para proteger el acceso (por ejemplo, para el usuario profesor) 
 
+sudo htpasswd -c /etc/apache2/.htpasswd_departamentos profesor
+
+<img width="764" height="25" alt="image" src="https://github.com/user-attachments/assets/526dd3ea-c6a9-4d5b-8e11-e7f0689a3791" />
+
+
