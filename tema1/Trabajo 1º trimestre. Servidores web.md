@@ -279,4 +279,38 @@ sudo nano /etc/apache2/sites-available/departamentos.conf
 
 <img width="829" height="21" alt="image" src="https://github.com/user-attachments/assets/4385802a-03dc-46e4-a9b3-f55bb2f44205" />
 
+Ahora pego la siguiente configuración
+
+<img width="858" height="489" alt="image" src="https://github.com/user-attachments/assets/59443f74-45f4-4528-9079-3c997d5e06af" />
+
+Lo guardamos y ahora activamos el sitio y reiniciamos Apache
+
+sudo a2ensite departamentos.centro.intranet.conf
+
+sudo systemctl restart apache2
+
+<img width="670" height="117" alt="image" src="https://github.com/user-attachments/assets/cf8785ae-55c1-4bcb-b6e7-06daac15d197" />
+
+# Instala y configura awstat
+
+Vamos instalar awstat y configurar y activar CGI en Apache lo hacemos con los siguientes comandos
+
+sudo apt install awstats -y
+
+sudo a2enmod cgi
+
+<img width="677" height="516" alt="image" src="https://github.com/user-attachments/assets/cb013122-df9c-4f65-b57f-11f8e630d87d" />
+
+Una vez instalado y configurado awstat vamos a crear una configuración específica para el dominio principal copiando la plantilla
+base
+
+<img width="842" height="31" alt="image" src="https://github.com/user-attachments/assets/26ca084c-50e1-4069-95a9-7531aff7d148" />
+
+Ahora modificamos estas tres líneas dentro del archivo
+
+ini
+LogFile="/var/log/apache2/centro_access.log"
+SiteDomain="centro.intranet"
+HostAliases="localhost 127.0.0.1 centro.intranet"
+
 
