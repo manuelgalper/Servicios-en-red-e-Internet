@@ -264,10 +264,19 @@ sudo chown -R www-data:www-data /var/www/departamentos
 
 <img width="700" height="18" alt="image" src="https://github.com/user-attachments/assets/a74881e0-b8b6-4f07-a662-a5cfc258a93a" />
 
-Ahora creamos un archivo de contraseñas para proteger el acceso (por ejemplo, para el usuario profesor) 
+Ahora creamos un archivo de contraseñas para proteger el acceso (por ejemplo, para el usuario profesor), después nos pedirá la contraseña 
+para el nuevo usuario y luego volver a escribir la contraseña
 
-sudo htpasswd -c /etc/apache2/.htpasswd_departamentos profesor
+sudo /usr/bin/htpasswd -c /etc/apache2/.htpasswd_departamentos profesor
 
-<img width="764" height="25" alt="image" src="https://github.com/user-attachments/assets/526dd3ea-c6a9-4d5b-8e11-e7f0689a3791" />
+Y vemos que el usuario profesor y el archivo .htpasswd_departamentos se han creado correctamente
+
+<img width="814" height="87" alt="image" src="https://github.com/user-attachments/assets/f9dcf77e-1c5d-46ad-a758-8654abefb5ce" />
+
+Ahora creamos el archivo VirtualHost para departamentos.centro.intranet
+
+sudo nano /etc/apache2/sites-available/departamentos.conf
+
+<img width="829" height="21" alt="image" src="https://github.com/user-attachments/assets/4385802a-03dc-46e4-a9b3-f55bb2f44205" />
 
 
