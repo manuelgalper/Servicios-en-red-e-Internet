@@ -308,9 +308,32 @@ base
 
 Ahora modificamos estas tres líneas dentro del archivo
 
-ini
 LogFile="/var/log/apache2/centro_access.log"
+
 SiteDomain="centro.intranet"
+
 HostAliases="localhost 127.0.0.1 centro.intranet"
 
+<img width="860" height="491" alt="image" src="https://github.com/user-attachments/assets/31fcd6ac-97c3-4952-91b1-5f5c39ab83f9" />
 
+<img width="865" height="513" alt="image" src="https://github.com/user-attachments/assets/855ffb51-f0eb-487e-93c5-3e474a028b31" />
+
+<img width="858" height="488" alt="image" src="https://github.com/user-attachments/assets/02c0d4b1-7de1-4ddd-a038-2c77f3152b26" />
+
+Una vez modificada las tres líneas configuramos los alias en Apache para ver las estadísticas
+
+sudo nano /etc/apache2/conf-available/awstats.conf
+
+<img width="671" height="19" alt="image" src="https://github.com/user-attachments/assets/b0a17e6a-2e7e-48cd-b470-7d37fcadcf95" />
+
+Ahora pegamos el siguiente contenido
+
+<img width="863" height="488" alt="image" src="https://github.com/user-attachments/assets/b589d62e-8991-41f1-827f-54afcf1e12b3" />
+
+Después habilitamos el módulo CGI en Apache para visualizar los informes y actualiza las estadísticas
+
+sudo a2enconf awstats
+
+sudo systemctl restart apache2
+
+sudo /usr/lib/cgi-bin/awstats.pl -config=centro.intranet -updat
