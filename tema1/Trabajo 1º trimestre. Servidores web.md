@@ -350,14 +350,43 @@ Para instalar Nginx, PHP-FPM, lo hacemos con el siguiente comando
 
 sudo apt install nginx php-fpm phpmyadmin -y
 
-<img width="642" height="22" alt="image" src="https://github.com/user-attachments/assets/821f5634-3b66-4e95-9ea3-1e95a59a12c2" />
-
-<img width="633" height="128" alt="image" src="https://github.com/user-attachments/assets/f05b7821-6540-4add-bfa6-9584bfadb088" />
+<img width="630" height="18" alt="image" src="https://github.com/user-attachments/assets/9f63e581-9218-4001-8f3f-10afee786ee5" />
 
 Y vemos que los tres paquetes (nginx, php-fpm y phpmyadmin) ya están instalados en el sistema y tiene PHP 8.4 (2:8.4+96ubuntu1).
 
-Al tener PHP 8.4, en el archivo /etc/nginx/sites-available/servidor2.centro.intranet debes apuntar al socket de esa versión
+<img width="633" height="128" alt="image" src="https://github.com/user-attachments/assets/f05b7821-6540-4add-bfa6-9584bfadb088" /> 
 
+Al tener PHP 8.4, en el archivo /etc/nginx/sites-available/servidor2.centro.intranet lo que hago es debes al socket de esa versión, 
+para ello abro el archivo con el editor nano
 
+sudo nano /etc/nginx/sites-available/servidor2.centro.intranet
 
+<img width="751" height="25" alt="image" src="https://github.com/user-attachments/assets/f001dc24-fde0-445f-bf3b-2b72b500fcaa" />
+
+Ahora pego la siguiente configuración
+
+<img width="859" height="445" alt="image" src="https://github.com/user-attachments/assets/9c43575a-c2e5-4b31-81cf-c0ea66fdf6c8" />
+
+Lo guardamos y salimos de nano
+
+Activa el sitio en Nginx, comprueba la sintaxis y reinicia el servicio
+
+sudo ln -s /etc/nginx/sites-available/servidor2.centro.intranet /etc/nginx/sites-enabled/
+
+sudo nginx -t
+
+sudo systemctl restart nginx
+
+<img width="857" height="97" alt="image" src="https://github.com/user-attachments/assets/ac9fb385-1bbf-4bca-8170-f39fa95063fb" />
+
+<img width="526" height="33" alt="image" src="https://github.com/user-attachments/assets/5e382f43-16f5-413d-b4a3-5a227410fa33" />
+
+Y vemos que Apache está funcionando en el puerto 80 y Nginx escuchando en el puerto 8080 sin conflictos
+
+Abrimos ahora el navegador y realizamos estas dos comprobaciones finales: http://servidor2.centro.intranet:8080/info.php y 
+http://servidor2.centro.intranet:8080/phpmyadmin
+
+<img width="1014" height="605" alt="image" src="https://github.com/user-attachments/assets/4a906d27-cf58-4adf-a9ce-902ec83a69a7" />
+
+<img width="1016" height="607" alt="image" src="https://github.com/user-attachments/assets/e01c3e5e-0500-43a7-8914-0f0d1d49f0d1" />
 
