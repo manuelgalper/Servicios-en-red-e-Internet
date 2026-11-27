@@ -352,10 +352,11 @@ sudo apt install nginx php-fpm phpmyadmin -y
 
 <img width="642" height="22" alt="image" src="https://github.com/user-attachments/assets/821f5634-3b66-4e95-9ea3-1e95a59a12c2" />
 
-<img width="640" height="133" alt="image" src="https://github.com/user-attachments/assets/99448f8f-458e-416e-967a-5764a15c53ad" />
+<img width="633" height="128" alt="image" src="https://github.com/user-attachments/assets/f05b7821-6540-4add-bfa6-9584bfadb088" />
 
+Y vemos que los tres paquetes (nginx, php-fpm y phpmyadmin) ya están instalados en el sistema y tiene PHP 8.4 (2:8.4+96ubuntu1).
 
-
+Al tener PHP 8.4, en el archivo /etc/nginx/sites-available/servidor2.centro.intranet debes apuntar al socket de esa versión
 
 
 
