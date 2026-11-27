@@ -346,11 +346,13 @@ sudo /usr/lib/cgi-bin/awstats.pl -config=centro.intranet -update
 En este último apartado vamos a haber cómo instalar un segundo servidor web (Nginx en puerto 8080) + PHP + phpMyAdmin 
 (servidor2.centro.intranet, para ello lo hago con el siguiente comando
 
+Para instalar Nginx, PHP-FPM, lo hacemos con el siguiente comando 
+
 sudo apt install nginx php-fpm phpmyadmin -y
 
-Durante la instalación de phpmyadmin, si nos pregunta qué servidor configurar, no marcamos Apache2 pulsamos Tab -> Aceptar sin marcar ninguno, 
-ya que lo enlazaremos manualmente a Nginx. Aceptamos configurar la base de datos con dbconfig-common y ponemos una contraseña
+<img width="642" height="22" alt="image" src="https://github.com/user-attachments/assets/821f5634-3b66-4e95-9ea3-1e95a59a12c2" />
 
+<img width="640" height="133" alt="image" src="https://github.com/user-attachments/assets/99448f8f-458e-416e-967a-5764a15c53ad" />
 
 
 
