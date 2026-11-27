@@ -390,3 +390,4 @@ http://servidor2.centro.intranet:8080/phpmyadmin
 
 <img width="1016" height="607" alt="image" src="https://github.com/user-attachments/assets/e01c3e5e-0500-43a7-8914-0f0d1d49f0d1" />
 
+Y de esta manera ya tendríamos funcionando el info.php y el phpmyadmin
